@@ -1,38 +1,394 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+  scroll-behavior: smooth;
+}
+.signup-form {
+  color: white;
+  border: 1px solid black;
+  margin: 10px;
+  width: 40%;
+  padding: 5px;
+  margin-left: 350px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.sign-btn {
+  background-color: blueviolet;
+  color: white;
+  padding: 5px;
+  margin: 5px;
+  width: 80%;
+  margin-left: 40px;
+}
+
+.comment-btn {
+  margin: 2px;
+  width: 50%;
+  padding: 5px;
+  color: white;
+  background-color: blueviolet;
+}
+.signup-form input {
+  color: white;
+  letter-spacing: 1px;
+  border: none;
+  border-bottom: 1px solid #999;
+  display: block;
+  width: 95%;
+  padding: 15px;
+  background: none;
+  font-size: 1rem;
+  margin: 15px;
+  text-overflow: ellipsis;
+}
+.home1 {
+  margin-top: 200px;
+}
+.de {
+  margin: 0%;
+  background-color: red;
+}
+footer {
+  background-color: blueviolet;
+  padding: 5px;
+  color: white;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.signup-form input:focus {
+  outline: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.signup-form input::placeholder {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.viewp:hover {
+  color: green;
+  cursor: pointer;
+}
+.viewpro:hover {
+  color: gold;
+  cursor: pointer;
+}
+.Homenav-bar {
+  background-color: blueviolet;
+  color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: whitesmoke;
+  margin: 0 1rem;
+}
+.nav-links li {
+  list-style-type: none;
+  padding: 2px 8px;
+}
+.signup_link:hover {
+  color: yellow;
+  cursor: pointer;
+}
+.topic:hover {
+  cursor: pointer;
+  color: gold;
+}
+#last {
+  background-color: red;
+  position: absolute;
+  bottom: -220px;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  font-size: 50px;
+}
+.b {
+  height: 200vh;
+}
+.default_pic {
+  width: 250px;
+}
+.delete_img {
+  width: 20px;
+}
+.delete_img:hover {
+  padding: 2px;
+  border-bottom: 2px solid black;
+}
+.edit_img {
+  width: 28px;
+  border: none;
+  background-color: blue;
+}
+.edit_img:hover {
+  padding: 2px;
+  border-bottom: 2px solid black;
+}
+.editProfile {
+  position: relative;
+  top: 8px;
+  left: 120px;
+  width: 30px;
+}
+.editProfile:hover {
+  padding: 2px;
+  border-bottom: 2px solid black;
+}
+.wholeProfile {
+  display: grid;
+  grid-template-areas: 'center left right';
+}
+.forum_side {
+  grid-area: left;
+  overflow-y: scroll;
+  width: 400px;
+  height: 100vh;
+  padding: 10px;
+  background-color: blueviolet;
+  text-align: center;
+}
+.profile_center {
+  grid-area: center;
+  height: 100vh;
+  width: 100%;
+}
+.downform {
+  grid-area: right;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+}
+.postTopic {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.comment-form {
+  padding: 10px;
+  margin-left: 400px;
+}
+.photo-form {
+  padding: 10px;
+}
+.comment-form textarea {
+  padding: 10px;
+  width: 50%;
+  margin: 5px;
+  border-radius: 5px;
+}
+.postTopic textarea {
+  padding: 10px;
+  width: 90%;
+  margin: 5px;
+  border-radius: 5px;
+}
+.header {
+  padding: 5px;
+  background-color: whitesmoke;
+}
+.u_comments {
+  margin: 7px;
+  padding: 5px;
+  border: 1px solid black;
+}
+.pst {
+  width: 90%;
+  background-color: blueviolet;
+  padding: 10px;
+  margin: 5px;
+}
+.yourF {
+  border-radius: 2px;
+  margin: 5px;
+  background-color: whitesmoke;
+}
+textarea::placeholder {
+  padding: 7px;
+}
+.choosefile {
+  color: blueviolet;
+}
+.allForums {
+  background-color: whitesmoke;
+  padding: 5px;
+  margin: 7px;
+}
+.written {
+  background-color: blueviolet;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  color: white;
+}
+.abou-page {
+  margin: 0px;
+  background-image: url('./images/r.jpg');
+  height: 100vh;
+  text-align: center;
+  align-items: center;
+}
+.bo {
+  width: 100%;
+  background-image: url('./images/Beautiful-Norway.jpg');
+  height: 100vh;
+  text-align: center;
+}
+.boo {
+  width: 100%;
+  background-image: url('./images/Beautiful-Norway.jpg');
+  height: 100vh;
+}
+.abou-page-p {
+  margin: 0px;
+  background-image: url('./images/r.jpg');
+  height: 100%;
+  text-align: center;
+  align-items: center;
+}
+.about_me {
+  color: white;
+  padding: 5px;
+  margin: 7px;
+  text-align: center;
+}
+.after {
+  align-items: center;
+  text-align: center;
+}
+.hisFo {
+  background-color: whitesmoke;
+  padding: 5px;
+  margin: 5px;
+  color: darkblue;
+}
+.errors {
+  background-color: red;
+  color: white;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  width: 95%;
+}
+.default_pics {
+  width: 40px;
+  border: none;
+  margin-left: -50px;
+  margin-top: -90px;
+  margin: 2px;
+}
+.default_picss {
+  width: 40px;
+  border: none;
+  margin-left: -50px;
+  margin-top: -50px;
+  margin: 2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 480px) {
+  .wholeProfile {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .boo {
+    height: 100%;
+  }
+  .signup-form {
+    margin-left: 0%;
+    padding: 7px;
+    width: 100%;
+  }
+  .signup-form input {
+    padding: 15px;
+    margin: 5px;
+    font-size: 14px;
+  }
+  .sign-btn {
+    width: 100%;
+    margin-left: 0%;
+  }
+  .forum_side {
+    width: 100%;
+    height: 300px;
+  }
+  .sign {
+    padding: 5px;
+  }
+  .downform {
+    padding: 5px;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+  }
+  .profile_center {
+    width: 100%;
+    height: 100%;
+  }
+  .abou-page {
+    width: 100%;
+    height: 100%;
+  }
+  .abou-page-p {
+    width: 100%;
+    height: 100vh;
+  }
+  .profilepage {
+    width: 100%;
+  }
+  textarea {
+    width: 100%;
+  }
+  .Homenav-bar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0%;
+  }
+  .default_pic {
+    width: 120px;
+  }
+  .editProfile {
+    position: relative;
+    left: 20px;
+    top: 15px;
+  }
+  .postTopic {
+    width: 100%;
+  }
+  .comment-form {
+    padding: 5px;
+    margin-left: 0px;
+    width: 100%;
+  }
+  .comment-btn {
+    width: 100%;
+  }
+  .comment-form textarea {
+    padding: 10px;
+    width: 100%;
+    margin: 0px;
+    border-radius: 5px;
+  }
+  textarea::placeholder {
+    padding: 7px;
+  }
+  .allForums {
+    background-color: whitesmoke;
+    padding: 5px;
+    margin: 7px;
   }
 }
