@@ -35,7 +35,7 @@ export const EditForum = () => {
       },
       body: JSON.stringify(state)
     };
-    const res = await (await fetch(`http://localhost:4500/user/editcomment?id=${id}`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/editcomment?id=${id}`, config)).json();
     if (res.status === 200) {
       setState({ ...state, editSucces: true });
       setTimeout(() => {

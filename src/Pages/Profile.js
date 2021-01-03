@@ -42,7 +42,7 @@ export const userProfile = () => {
         Authorization: `Bearer ${token}`
       },
     };
-    const res = await (await fetch(`http://localhost:4500/user/viewforum?id=${id}`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/viewforum?id=${id}`, config)).json();
     if (res.status === 200) {
       localStorage.setItem('f_id', id);
       history.push(`/forum/${id}`);
@@ -63,7 +63,7 @@ export const userProfile = () => {
         Authorization: `Bearer ${token}`
       },
     };
-    const res = await (await fetch(`http://localhost:4500/user/deleteforum?id=${id}`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/deleteforum?id=${id}`, config)).json();
     if (res.status === 200) {
       setState({ ...state, deletedSuccessfully: true });
       setTimeout(() => {
@@ -85,7 +85,7 @@ export const userProfile = () => {
         Authorization: `Bearer ${token}`
       },
     };
-    const res = await (await fetch(`http://localhost:4500/user/viewEditForumTopic?id=${id}`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/viewEditForumTopic?id=${id}`, config)).json();
     if (res.status === 200) {
       localStorage.setItem("tp_id", res.Id);
       history.push(`/ForumTopic/${res.Id}`);
@@ -108,7 +108,7 @@ export const userProfile = () => {
       },
       body: JSON.stringify(state)
     };
-    const res = await (await fetch(`http://localhost:4500/user/createforum`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/createforum`, config)).json();
     if (res.status === 200) {
       setState({ ...state, posted: true });
       setTimeout(() => {
@@ -133,7 +133,7 @@ export const userProfile = () => {
       },
       body: formData
     };
-    const res = await (await fetch(`http://localhost:4500/user/uploadphoto`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/uploadphoto`, config)).json();
     if (res.status === 200) {
       window.location.reload();
     }

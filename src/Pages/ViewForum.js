@@ -46,7 +46,7 @@ export const ViewForum = () => {
       },
       body: JSON.stringify(state)
     };
-    const res = await (await fetch(`http://localhost:4500/user/createcomment?id=${id}`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/createcomment?id=${id}`, config)).json();
     if (res.status === 200) {
       window.location.reload();
     }
@@ -68,7 +68,7 @@ export const ViewForum = () => {
       },
 
     };
-    const res = await (await fetch(`http://localhost:4500/user/deletecomment?id=${id}`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/deletecomment?id=${id}`, config)).json();
     if (res.status === 200) {
       setState({ ...state, success: true });
       setTimeout(() => {
@@ -97,7 +97,7 @@ export const ViewForum = () => {
         Authorization: `Bearer ${token}`
       },
     };
-    const res = await (await fetch(`http://localhost:4500/user/viewOtherProfile?username=${username}`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/viewOtherProfile?username=${username}`, config)).json();
     if (res.status === 200) {
       localStorage.setItem('u_pro', res.username);
       history.push(`/U_profile/${res.username}`);

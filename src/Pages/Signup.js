@@ -25,7 +25,7 @@ export const SignUp = () => {
       },
       body: JSON.stringify(state),
     };
-    const res = await (await fetch(`http://localhost:4500/auth/U-signup`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/auth/U-signup`, config)).json();
     if (res.status === 200) {
       localStorage.setItem('username', res.username);
       history.push('/aftersignup');

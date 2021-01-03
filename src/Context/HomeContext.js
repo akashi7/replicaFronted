@@ -44,7 +44,7 @@ export const UserProvider = ({ children }) => {
     const config = {
       method: "GET"
     };
-    const res = await (await fetch(`http://localhost:4500/home/homeview`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/home/homeview`, config)).json();
     if (res.status === 200) {
       dispatch({
         type: 'HOME',
@@ -57,7 +57,7 @@ export const UserProvider = ({ children }) => {
     const config = {
       method: "GET"
     };
-    const res = await (await fetch(`http://localhost:4500/user/aftersignup?username=${username}`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/aftersignup?username=${username}`, config)).json();
     if (res.status === 200) {
       dispatch({
         type: 'AFTER_SIGNUP',
@@ -75,7 +75,7 @@ export const UserProvider = ({ children }) => {
         Authorization: `Bearer ${tok}`
       },
     };
-    const res = await (await fetch(`http://localhost:4500/user/viewforum?id=${id}`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/viewforum?id=${id}`, config)).json();
     if (res.status === 200) {
       dispatch({
         type: 'VIEW_FORUM',
@@ -95,7 +95,7 @@ export const UserProvider = ({ children }) => {
         Authorization: `Bearer ${token}`
       },
     };
-    const res = await (await fetch(`http://localhost:4500/user/viewEditForum?id=${id}`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/viewEditForum?id=${id}`, config)).json();
     if (res.status === 200) {
       dispatch({
         type: 'VIEW_EDIT_FORUM',
@@ -115,7 +115,7 @@ export const UserProvider = ({ children }) => {
         Authorization: `Bearer ${token}`
       },
     };
-    const res = await (await fetch(`http://localhost:4500/user/viewEditForumTopic?id=${id}`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/viewEditForumTopic?id=${id}`, config)).json();
     if (res.status === 200) {
       dispatch({
         type: 'VIEW_EDIT_FORUM_TOPIC',
@@ -135,7 +135,7 @@ export const UserProvider = ({ children }) => {
         Authorization: `Bearer ${token}`
       },
     };
-    const res = await (await fetch(`http://localhost:4500/user/viewProfile`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/viewProfile`, config)).json();
     if (res.status === 200) {
       dispatch({
         type: 'USER_VIEW_PROFILE',
@@ -156,7 +156,7 @@ export const UserProvider = ({ children }) => {
         Authorization: `Bearer ${token}`
       },
     };
-    const res = await (await fetch(`http://localhost:4500/user/viewOtherProfile?username=${username}`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/viewOtherProfile?username=${username}`, config)).json();
     if (res.status === 200) {
       dispatch({
         type: 'USER_VIEW_OTHER_PROFILE',
@@ -176,7 +176,7 @@ export const UserProvider = ({ children }) => {
         Authorization: `Bearer ${token}`
       },
     };
-    const res = await (await fetch(`http://localhost:4500/user/getUserMessage?id=${id}`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/getUserMessage?id=${id}`, config)).json();
     if (res.status === 200) {
       dispatch({
         type: 'GET_USER_MESSAGES',

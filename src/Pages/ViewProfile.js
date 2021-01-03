@@ -37,7 +37,7 @@ export const UserViewOtherProfiles = () => {
         Authorization: `Bearer ${token}`
       },
     };
-    const res = await (await fetch(`http://localhost:4500/user/viewforum?id=${id}`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/user/viewforum?id=${id}`, config)).json();
     if (res.status === 200) {
       localStorage.setItem('f_id', id);
       history.push(`/forum/${id}`);

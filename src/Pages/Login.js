@@ -20,7 +20,7 @@ export const ToLogin = () => {
       },
       body: JSON.stringify(state),
     };
-    const res = await (await fetch(`http://localhost:4500/auth/U-login`, config)).json();
+    const res = await (await fetch(`https://replicaback.herokuapp.com/auth/U-login`, config)).json();
     if (res.status === 200) {
       localStorage.setItem('token', res.token);
       localStorage.setItem('username', res.username);
