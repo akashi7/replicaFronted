@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { UserContext } from '../Context/HomeContext';
 import { useHistory } from 'react-router-dom';
 import { Insidenav } from '../Components/Insidenav';
+import moment from 'moment';
 
 export const ViewForum = () => {
   const history = useHistory();
@@ -124,7 +125,7 @@ export const ViewForum = () => {
                   <div key={id.id} className="header">
                     <h4>Topic:{id.topic}</h4>
                     <p>brief:{id.content} </p>
-                    <p>At:{id.createdat} </p>
+                    <p>At:{moment(id.createdat).fromNow()} </p>
                   </div>
                 </>
               );
