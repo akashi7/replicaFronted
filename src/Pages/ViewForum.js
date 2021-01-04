@@ -139,7 +139,7 @@ export const ViewForum = () => {
                     <div key={id.id} className="u_comments">
                       {id.username === state.username ? <p className="viewp">{id.username} </p> : <p onClick={(e, f) => viewUserProfile(e, id.username)} className="viewpro"  >By : {id.username}</p>}
                       <p>{id.comment} </p>
-                      <p>{id.createdat} </p>
+                      <p>{moment(id.createdat).fromNow()} </p>
                       {id.username === state.username ? <button type="button" style={{ backgroundColor: "red" }} onClick={(e, v) => deleteComment(e, id.id)}  >Delete</button> : ""}
                       {id.username === state.username ? <button type="button" style={{ backgroundColor: "Yellow" }} onClick={(e, u) => { pushToEdit(e, id.id); }}  >Edit</button> : ""}
                     </div>
