@@ -40,6 +40,16 @@ export const HomeReducer = (state, action) => {
         ...state,
         userEditForumTopic: action.payload
       };
+    case 'ALL_USERS':
+      return {
+        ...state,
+        allUsers: action.payload
+      };
+    case 'ONE_USER':
+      return {
+        ...state,
+        oneUser: action.payload
+      };
     default:
       return null;
   }

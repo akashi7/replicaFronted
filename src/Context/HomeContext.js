@@ -30,6 +30,12 @@ const initialState = {
   },
   viewChat: {
     chat: []
+  },
+  allUsers: {
+    people: []
+  },
+  oneUser: {
+    userPro: []
   }
 
 };
@@ -152,7 +158,6 @@ export const UserProvider = ({ children }) => {
     const config = {
       method: "GET",
       headers: {
-        'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
       },
     };
@@ -187,12 +192,49 @@ export const UserProvider = ({ children }) => {
       history.push(`/`);
     }
   };
+  const adminViewUsers = async (token) => {
+    const config = {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+    };
+    const res = await (await fetch(`https://replicaback.herokuapp.com/admin/allUsers`, config)).json();
+    if (res.status === 200) {
+      dispatch({
+        type: 'ALL_USERS',
+        payload: res.data
+      });
+    }
+    else if (res.status === 401) {
+      history.push(`/`);
+    }
+  };
 
+  const adminViewOneUser = async (token, id) => {
+    const config = {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+    };
+    const res = await (await fetch(`https://replicaback.herokuapp.com/admin/user?id=${id}`, config)).json();
+    if (res.status === 200) {
+      dispatch({
+        type: 'ONE_USER',
+        payload: res.data
+      });
+    }
+    else if (res.status === 401) {
+      history.push(`/`);
+    }
+
+  };
 
 
 
   return (
-    <UserContext.Provider value={{ ...state, homeView, afterSignup, viewForum, viewEditForum, viewEditForumTopic, profile, viewOther, viewSentMessages }}>
+    <UserContext.Provider value={{ ...state, homeView, adminViewOneUser, adminViewUsers, afterSignup, viewForum, viewEditForum, viewEditForumTopic, profile, viewOther, viewSentMessages }}>
       {children}
     </UserContext.Provider>
   );

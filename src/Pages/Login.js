@@ -26,6 +26,11 @@ export const ToLogin = () => {
       localStorage.setItem('username', res.username);
       history.push('/dashboard');
     }
+    else if (res.status === 208) {
+      localStorage.setItem('token', res.token);
+      localStorage.setItem('username', res.username);
+      history.push('/admin');
+    }
     else if (res.status === 408) {
       setState({ ...state, err: "User doesn't Exist" });
     }

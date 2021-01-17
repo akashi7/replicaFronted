@@ -14,6 +14,8 @@ import { userProfile } from './Pages/Profile';
 import { UserViewOtherProfiles } from './Pages/ViewProfile';
 import { MessageUser } from './Pages/MessageUser';
 import { About } from './Pages/About';
+import { Admindashboard } from './Pages/Admin';
+import { AdminViewOne } from './Pages/AdminViewOne';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
           <Route path="/U_profile/:id" component={UserViewOtherProfiles} exact />
           <Route path="/message/:id" component={MessageUser} exact />
           <Route path="/about" component={About} exact />
+          <Route path="/admin" component={Admindashboard} exact />
+          <Route path="/viewuser" component={AdminViewOne} exact />
         </UserProvider>
       </Switch>
     </Router>

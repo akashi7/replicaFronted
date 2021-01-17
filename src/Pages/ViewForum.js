@@ -30,7 +30,6 @@ export const ViewForum = () => {
         setState({ ...state, username: userName });
         await viewForum(token, id);
         document.title = "view forum";
-
       }
 
     })();
@@ -113,7 +112,7 @@ export const ViewForum = () => {
 
   return (
     <>
-      <div>
+      <div className="lenny">
         <Insidenav />
         {state.success ? <p style={{ color: "darkgreen" }}>Comment Deleted Succsefully</p> : ""}
         {state.editSucces ? <p style={{ color: "darkgreen" }}>Comment edited Succsefully</p> : ""}
@@ -147,11 +146,12 @@ export const ViewForum = () => {
                 );
               })}
           </div>
+
+          <form onSubmit={(e) => handleSubmit(e)} className="comment-form">
+            <textarea cols='40' rows='10' required onChange={(e) => { setState({ ...state, comment: e.target.value }); }}></textarea>
+            <button type="submit" className="comment-btn">Post</button>
+          </form>
         </div>
-        <form onSubmit={(e) => handleSubmit(e)} className="comment-form">
-          <textarea cols='40' rows='10' required onChange={(e) => { setState({ ...state, comment: e.target.value }); }}></textarea>
-          <button type="submit" className="comment-btn">Post</button>
-        </form>
       </div>
 
     </>
