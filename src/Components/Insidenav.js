@@ -8,10 +8,6 @@ export const Insidenav = () => {
 
   });
   const history = useHistory();
-  const push = (e) => {
-    e.preventDefault();
-    history.push('/signup');
-  };
   const logOut = () => {
     localStorage.clear();
     history.push('/');

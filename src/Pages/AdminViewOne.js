@@ -30,10 +30,10 @@ export const AdminViewOne = () => {
               <>
                 <div key={id.id}>
                   {id.photo ? <img src={id.photo} className='default_pic' /> : <img src={pic} className='default_pic' />}
-                  <p>Username:{id.username}</p>
-                  <p>First name {id.fname} </p>
-                  <p>Last name{id.lname} </p>
-                  <p>Email:{id.email} </p>
+                  <p>Username : {id.username}</p>
+                  <p>First name : {id.fname} </p>
+                  <p>Last name : {id.lname} </p>
+                  <p>Email : {id.email} </p>
                 </div>
               </>
             );

@@ -112,7 +112,7 @@ export const ViewForum = () => {
 
   return (
     <>
-      <div className="lenny">
+      <div>
         <Insidenav />
         {state.success ? <p style={{ color: "darkgreen" }}>Comment Deleted Succsefully</p> : ""}
         {state.editSucces ? <p style={{ color: "darkgreen" }}>Comment edited Succsefully</p> : ""}

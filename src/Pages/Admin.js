@@ -43,7 +43,8 @@ export const Admindashboard = () => {
           {allUsers.people.map(id => {
             return (
               <div key={id.id} className="UserOne">
-                <p onClick={(i) => viewUser(id.id)}>username : {id.username}</p>
+                <p>id : {id.id}</p>
+                <p onClick={(i) => viewUser(id.id)} className="viewpro">username : {id.username}</p>
               </div>
             );
           })}

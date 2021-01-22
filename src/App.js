@@ -35,7 +35,7 @@ function App() {
           <Route path="/message/:id" component={MessageUser} exact />
           <Route path="/about" component={About} exact />
           <Route path="/admin" component={Admindashboard} exact />
-          <Route path="/viewuser" component={AdminViewOne} exact />
+          <Route path="/viewuser/:id" component={AdminViewOne} exact />
         </UserProvider>
       </Switch>
     </Router>

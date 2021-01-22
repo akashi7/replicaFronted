@@ -8,10 +8,7 @@
 body {
   scroll-behavior: smooth;
 }
-.lenny {
-  height: 100vh;
-  background-image: url('./images/background-pages.png');
-}
+
 .signup-form {
   color: white;
   border: 1px solid black;
@@ -23,7 +20,7 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 .sign-btn {
-  background-color: blueviolet;
+  background-color: #173e43;
   color: white;
   padding: 5px;
   margin: 5px;
@@ -60,7 +57,7 @@ body {
   background-color: red;
 }
 footer {
-  background-color: blueviolet;
+  background-color: #173e43;
   padding: 5px;
   color: white;
   text-align: center;
@@ -156,7 +153,7 @@ footer {
   width: 400px;
   height: 100vh;
   padding: 10px;
-  background-color: blueviolet;
+  background-color: #173e43;
   text-align: center;
 }
 .profile_center {
@@ -205,7 +202,7 @@ footer {
 }
 .pst {
   width: 90%;
-  background-color: blueviolet;
+  background-color: #173e43;
   padding: 10px;
   margin: 5px;
 }
@@ -218,7 +215,7 @@ textarea::placeholder {
   padding: 7px;
 }
 .choosefile {
-  color: blueviolet;
+  color: #173e43;
 }
 .allForums {
   background-color: whitesmoke;
@@ -226,7 +223,7 @@ textarea::placeholder {
   margin: 7px;
 }
 .written {
-  background-color: blueviolet;
+  background-color: #173e43;
   padding: 5px;
   margin: 5px;
   text-align: center;
