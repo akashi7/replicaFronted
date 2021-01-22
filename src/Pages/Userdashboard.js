@@ -129,7 +129,7 @@ export const Dashboard = () => {
               return (
                 <div key={id.id} className="allForums">
                   <h4 onClick={(e, v) => { viewTopic(e, id.id); }} className="topic">{id.topic}</h4>
-                  {id.username === state.username ? <p className="viewp">{id.username} </p> : <p onClick={(e, f) => viewUserProfile(e, id.username)} className="viewpro"  >By : {id.username}</p>}
+                  {(id.username === state.username) || (id.username === 'admin') ? <p className="viewp">{id.username} </p> : <p onClick={(e, f) => viewUserProfile(e, id.username)} className="viewpro"  >By : {id.username}</p>}
                   <p>At : {moment(id.createdat).fromNow()}</p>
                   {id.username === state.username ? <button type="button" style={{ backgroundColor: "red" }} onClick={(e, i) => { deleteForum(e, id.id); }}   >Delete</button> : ""}
                   {id.username === state.username ? <button type="button" style={{ backgroundColor: "Yellow" }} onClick={(e, i) => { pushToEditForum(e, id.id); }} >Edit</button> : ""}
