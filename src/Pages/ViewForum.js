@@ -63,7 +63,6 @@ export const ViewForum = () => {
     const config = {
       method: "DELETE",
       headers: {
-        'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
       },
 
@@ -93,7 +92,6 @@ export const ViewForum = () => {
     const config = {
       method: "GET",
       headers: {
-        'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
       },
     };
@@ -123,7 +121,7 @@ export const ViewForum = () => {
                 <>
                   <div key={id.id} className="header">
                     <h4>Topic:{id.topic}</h4>
-                    <p>brief:{id.content} </p>
+                    <p>brief : {id.content} </p>
                     <p>At:{moment(id.createdat).fromNow()} </p>
                   </div>
                 </>
@@ -136,11 +134,14 @@ export const ViewForum = () => {
                 return (
                   <>
                     <div key={id.id} className="u_comments">
-                      {id.username === state.username ? <p className="viewp">{id.username} </p> : <p onClick={(e, f) => viewUserProfile(e, id.username)} className="viewpro"  >By : {id.username}</p>}
+                      {id.username === state.username ? <p className="viewp">{id.username} </p>
+                        : <p onClick={(e, f) => viewUserProfile(e, id.username)} className="viewpro"  >By : {id.username}</p>}
                       <p>{id.comment} </p>
                       <p>{moment(id.createdat).fromNow()} </p>
-                      {id.username === state.username ? <button type="button" style={{ backgroundColor: "red" }} onClick={(e, v) => deleteComment(e, id.id)}  >Delete</button> : ""}
-                      {id.username === state.username ? <button type="button" style={{ backgroundColor: "Yellow" }} onClick={(e, u) => { pushToEdit(e, id.id); }}  >Edit</button> : ""}
+                      {id.username === state.username ? <button type="button" style={{ backgroundColor: "red" }} onClick={(e, v) => deleteComment(e, id.id)}  >Delete</button>
+                        : ""}
+                      {id.username === state.username ? <button type="button" style={{ backgroundColor: "Yellow" }} onClick={(e, u) => { pushToEdit(e, id.id); }}  >Edit</button>
+                        : ""}
                     </div>
                   </>
                 );
@@ -153,8 +154,6 @@ export const ViewForum = () => {
           </form>
         </div>
       </div>
-
     </>
-
   );
 };
